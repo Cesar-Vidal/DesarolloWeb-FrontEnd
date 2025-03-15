@@ -1,39 +1,56 @@
-body {
-    font-family: 'Roboto', sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 .logo img {
-    height: 80px; 
+    height: 80px;
 }
 
 .navbar {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     padding: 10px 15px;
-    color: white;
+    color: black;
     justify-content: space-between;
-}
-
-.navbar .logo img {
-    flex-shrink: 0;
-    height: 40px;
+    position: relative;
 }
 
 .navbar ul {
-    color: black;
     list-style: none;
-    display: flex;
-    flex-direction: column; 
     padding: 0;
-    justify-content: space-between;
+    margin: 0;
 }
 
-.navbar ul li {
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-menu.active {
+    display: block;
+}
+
+.nav-menu nav ul {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px; /* Espacio para el botón de cerrar */
+}
+
+.nav-menu nav ul li {
     margin: 10px 0;
 }
 
@@ -58,7 +75,7 @@ body {
 
 .hero {
     background: url('hero-background.jpg') no-repeat center center/cover;
-    height: 50vh; 
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,22 +87,23 @@ body {
 .hero-content {
     padding: 20px;
     border-radius: 10px;
-    text-align: left; 
+    text-align: left;
     align-items: flex-start;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 5%; 
+    left: 5%;
+    max-width: 90%;
 }
 
 .hero h1 {
-    font-size: 2rem; 
+    font-size: 2rem;
     margin: 0;
 }
 
 .hero p {
-    font-size: 1rem; 
+    font-size: 1rem;
 }
 
 .btn {
@@ -101,7 +119,7 @@ body {
 
 .features {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     padding: 20px;
     background: #f4f4f4;
@@ -109,7 +127,7 @@ body {
 
 .feature {
     text-align: center;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .feature i {
@@ -128,11 +146,42 @@ footer {
     padding: 20px 0;
 }
 
+.nav-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu.active {
+    display: block; /* Mostrar cuando está activo */
+}
+
+.close-menu {
+    display: none; /* Ocultar la "X" por defecto */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-menu.active .close-menu {
+    display: block; /* Mostrar la "X" cuando el menú está activo */
+}
+
+
 .footer-content ul {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -146,24 +195,58 @@ footer {
     font-size: 0.9rem;
 }
 
+.close-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.nav-menu.active .close-menu {
+    display: block; 
+}
+
 
 @media (min-width: 768px) {
-    .navbar {
-        flex-direction: row; 
-        justify-content: space-between;
+    .nav-menu {
+        display: block;
+        position: static;
+        width: auto;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
     }
-
-    .navbar ul {
-        flex-direction: row; 
+    
+    .nav-menu nav ul {
+        display: flex !important;
+        flex-direction: row;
+        margin-top: 0;
+    }
+    
+    .close-menu {
+        display: none !important;
+    }
+    
+    .menu-toggle {
+        display: none;
     }
 
     .features {
-        flex-direction: row; 
+        flex-direction: row;
         justify-content: space-around;
     }
 
     .hero {
-        height: 60vh; 
+        height: 60vh;
+    }
+
+    .hero-content {
+        max-width: 50%;
     }
 
     .hero h1 {

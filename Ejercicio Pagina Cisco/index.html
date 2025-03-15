@@ -5,58 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cisco - Networking, Cloud, and Security</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="navbar">
+        <div class="navbar" role="navigation">
+
             <div class="logo">
                 <img src="CiscoLogo.png" alt="Cisco Logo">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Products & Services</a></li>
-                    <li><a href="#">Solutions</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Training & Events</a></li>
-                    <li><a href="#">Partners</a></li>
-                </ul>
-            </nav>
-            <div class="search-cart">
-                <input type="text" placeholder="Search...">
-                <button>🔍</button>
+            
+            <!-- Botón de menú para dispositivos móviles -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">☰</button>
+            <div class="nav-menu" id="nav-menu">
+                <button class="close-menu" id="close-menu" aria-label="Close navigation menu">✖</button>
+                <nav>
+                    <ul>
+                        <li><a href="#">Products & Services</a></li>
+                        <li><a href="#">Solutions</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Training & Events</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </nav>
             </div>
+
+            <div class="search-cart">
+                <input type="text" placeholder="Search..." aria-label="Search">
+                <button type="submit">🔍</button>
+            </div>
+
         </div>
     </header>
-    
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Bringing AI to the Enterprise</h1>
-            <p>Discover how Cisco is transforming the future with AI-driven solutions.</p>
-                <div>
-                    <button class="btn">Learn More</button>
-                    <button class="btn">Learn More</button>
-                </div>
-            </div>
-    </section>
 
-    <section class="features">
-        <div class="feature">
-            <i class="fas fa-cloud"></i>
-            <h3>Cloud Solutions</h3>
-            <p>Seamless cloud integration for enterprises.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-network-wired"></i>
-            <h3>Networking</h3>
-            <p>Next-gen connectivity solutions.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Security</h3>
-            <p>Innovative cybersecurity solutions.</p>
-        </div>
-    </section>
-    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bringing AI to the Enterprise</h1>
+                <p>Discover how Cisco is transforming the future with AI-driven solutions.</p>
+                <button class="btn">Learn More</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>Cloud Solutions</h3>
+                <p>Seamless cloud integration for enterprises.</p>
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Networking</h3>
+                <p>Next-gen connectivity solutions.</p>
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-shield-alt"></i>
+                <h3>Security</h3>
+                <p>Innovative cybersecurity solutions.</p>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Cisco Systems, Inc. All rights reserved.</p>
@@ -69,3 +78,4 @@
     </footer>
 </body>
 </html>
+
