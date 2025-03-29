@@ -8,13 +8,13 @@ body {
 }
 .container {
     display: flex;
-    gap: 10px;
+    gap: 30px
 }
 .tecla {
     width: 60px;
     height: 60px;
     background: transparent;
-    border: 2px solid yellow;
+    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
