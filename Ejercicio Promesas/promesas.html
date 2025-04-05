@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Promesas - Hamburguesas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="promesas.js"></script>
+</head>
+<body class="contenido">
+  <div class="formulario">
+    <label class="titulo-label" for="ingredient">Agregar Ingrediente:</label>
+    <div class="grupo-input">
+      <input class="campo-texto" id="ingredient" placeholder="Ingrediente" type="text" />
+      <button id="addBtn" class="boton">Agregar</button>
+      <button id="orderBtn" class="boton">Completar pedido</button>
+    </div>
+  </div>
+
+  <div id="orderStatus" class="contenedor-pedido">
+    <img
+      id="orderImage"
+      class="img-pedido"
+      src="hamburgers.png"
+      alt="Imagen del pedido" />
+    <div class="detalles-pedido">
+      <p id="orderText">Aquí está tu pedido:</p>
+      <p id="ingredientsText">con pollo, tocino, lechuga</p>
+    </div>
+  </div>
+</body>
+</html>
