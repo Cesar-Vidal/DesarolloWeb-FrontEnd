@@ -7,9 +7,23 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-      <button id="login-btn">Iniciar Sesión</button>
-    </header>
+  <header>
+    <img src="assets/Fitness.png" id="header-bg" alt="Fitness Banner">
+    <button id="login-btn">Iniciar Sesión</button>
+    <div id="now-playing">
+        <div class="icon">
+            <img src="assets/Spotify.webp" alt="Spotify" /> 
+        </div>
+        <div class="info">
+            <span class="title">Reproduciendo Ahora</span>
+            <span class="song">Music</span>
+            <span class="artist">De Music</span>
+        </div>
+        <div class="arrow">
+            >
+        </div>
+    </div>
+  </header>
 
   <main id="cards-container">
     <div class="card" data-id="1" style="grid-area: card1;">
@@ -57,9 +71,37 @@
         </div>
     </div>
 
+    <div class="card" data-id="6" style="grid-area: card6;">
+      <img src="assets/soccer.jpg" alt="Running" />
+      <div class="info">
+          <span class="duration">60min</span>
+          <h3>Sprints de running</h3>
+          <p>Individual o en grupo</p>
+      </div>
+    </div>
+
+
+    <div class="card" data-id="7" style="grid-area: card7;">
+      <img src="assets/soccer.jpg" alt="Running" />
+      <div class="info">
+          <span class="duration">60min</span>
+          <h3>Sprints de running</h3>
+          <p>Individual o en grupo</p>
+      </div>
+    </div>
+
+    
+    <div class="card" data-id="8" style="grid-area: card8;">
+      <img src="assets/soccer.jpg" alt="Running" />
+      <div class="info">
+          <span class="duration">60min</span>
+          <h3>Sprints de running</h3>
+          <p>Individual o en grupo</p>
+      </div>
+    </div>
+
 </main>
 
-  <!-- Overlay + Popup -->
   <div id="overlay" class="hidden">
     <div id="expanded-card">
       <div class="expanded-content">

@@ -1,248 +1,331 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: #f8f0e3;
+  font-family: sans-serif;
+  margin: 0;
+  background-color: rgb(255, 90, 44);
 }
 
 header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 1rem;
-    background-image: url("assets/Fitness.png");
-    background-size: contain; /* Ajusta para mostrar la imagen completa */
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 200px; /* Ajusta la altura mínima según sea necesario */
-    height: auto;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 0; /* Elimina las esquinas redondeadas */
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: 400px;
+  background: #ff5a2c;
+  color: white;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+#header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
 }
 
 #login-btn {
-    background-color: rgba(255, 167, 38, 0.9); /* Naranja con transparencia */
-    color: white;
-    border: 2px solid white; /* Borde blanco para más contraste */
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 10; /* Asegurar que el botón esté por encima del overlay */
-}
-
-#login-btn:hover {
-    background-color: rgba(245, 124, 0, 1); /* Naranja más oscuro al pasar el ratón */
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
 }
 
 header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Capa semitransparente oscura */
-    border-radius: 0; /* Asegura que el overlay también no tenga bordes redondeados */
-    z-index: 1; /* Asegurar que el overlay esté debajo del botón */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  z-index: 2;
 }
 
 #cards-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-        "card1 card2 card3"
-        "card4 card4 card5"
-        "card6 card7 card8";
-    grid-gap: 1rem;
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto; 
+  grid-template-areas:
+      "card1 card2 card3"
+      "card4 card4 card5"
+      "card6 card7 card8";
+  grid-gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(255, 90, 44);
+}
+
+@media (max-width: 768px) {
+  #cards-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+          "card1"
+          "card2"
+          "card3"
+          "card4"
+          "card5"
+          "card6"
+          "card7"
+          "card8";
+      grid-gap: 1rem; 
+      padding: 1rem;
+  }
 }
 
 .card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; 
 }
 
 .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .card img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain; 
+  display: block;
 }
 
 .card .info {
-    padding: 1rem;
+  padding: 0.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card .info h3 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    font-size: 1.2rem;
-    color: #333;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .card .info p {
-    color: #666;
-    font-size: 0.9rem;
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
 }
 
 .duration {
-    background: #4caf50;
-    color: white;
-    font-weight: bold;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 576px) {
+  .card .info p {
+      display: none;
+  }
 }
 
 #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    transition: opacity 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: opacity 0.3s ease;
 }
 
 #expanded-card {
-    background: white;
-    border-radius: 20px;
-    position: relative;
-    display: none;
-    transform: scale(0.9);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  background: white;
+  border-radius: 20px;
+  position: relative;
+  display: none;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #overlay.active,
 #expanded-card.active {
-    display: flex;
-    opacity: 1;
-    transform: scale(1);
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .expanded-content {
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .expanded-content img {
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 12px 0 0 12px;
-    display: block;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px 0 0 12px;
+  display: block;
 }
 
 .expanded-content .info {
-    padding: 1rem;
-    flex: 1;
+  padding: 1rem;
+  flex: 1;
 }
 
 .expanded-content .info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .expanded-content .info p {
-    font-size: 1rem;
-    color: #555;
+  font-size: 1rem;
+  color: #555;
 }
 
 .start-btn,
 .invite-btn {
-    margin: 0.5rem 0.2rem;
-    padding: 0.6rem 1rem;
-    border: none;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
+  margin: 0.5rem 0.2rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .start-btn {
-    background: #ffeb3b;
-    color: #333;
+  background: #ffeb3b;
+  color: #333;
 }
 
 .invite-btn {
-    background: #cddc39;
-    color: #333;
+  background: #cddc39;
+  color: #333;
 }
 
 #close-expanded {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #888;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
 }
 
-/* Media Queries para Responsivo */
+#now-playing {
+  position: absolute;
+  bottom: 1.5rem;   
+  right: 1.5rem;     
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  z-index: 10;       
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+#now-playing .icon img {
+  width: 24px;       
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+#now-playing .info {
+  display: flex;
+  flex-direction: column;
+}
+
+#now-playing .title {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+#now-playing .song {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#now-playing .artist {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+#now-playing .arrow {
+  font-size: 1.2rem;
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
+  header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0.5rem;
+      min-height: 150px;
+  }
 
-    #cards-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-            "card1"
-            "card2"
-            "card3"
-            "card4"
-            "card5"
-            "card6"
-            "card7"
-            "card8";
-    }
+  header img {
+      margin-bottom: 0.5rem;
+  }
 
-    .card {
-        width: 100%;
-        margin: 0.5rem 0;
-    }
+  #login-btn {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      top: 0.5rem;
+      right: 0.5rem;
+  }
 
-    #expanded-card {
-        width: 95%;
-    }
+  #now-playing {
+      padding: 0.3rem 0.5rem;
+      bottom: 0.5rem;
+      right: 0.5rem;
+  }
 
-    .expanded-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  #now-playing .title {
+      font-size: 0.6rem;
+  }
 
-    .expanded-content img {
-        max-height: 300px;
-        width: 100%;
-        border-radius: 12px 12px 0 0;
-    }
+  #now-playing .song {
+      font-size: 0.8rem;
+  }
+
+  #now-playing .artist {
+      font-size: 0.7rem;
+  }
 }
