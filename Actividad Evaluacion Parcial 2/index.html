@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fitness Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+      <button id="login-btn">Iniciar Sesión</button>
+    </header>
+
+  <main id="cards-container">
+    <div class="card" data-id="1" style="grid-area: card1;">
+        <img src="assets/soccer.jpg" alt="Soccer" />
+        <div class="info">
+            <span class="duration">90min</span>
+            <h3>Juego de soccer</h3>
+            <p>5 contra 5</p>
+        </div>
+    </div>
+
+    <div class="card" data-id="2" style="grid-area: card2;">
+        <img src="assets/tennis.jpg" alt="Tennis" />
+        <div class="info">
+            <span class="duration">30min</span>
+            <h3>Partida de tenis</h3>
+            <p>1 contra 1</p>
+        </div>
+    </div>
+
+    <div class="card" data-id="3" style="grid-area: card3;">
+        <img src="assets/soccer.webp" alt="Functional Training" />
+        <div class="info">
+            <span class="duration">40min</span>
+            <h3>Ejercicio funcional</h3>
+            <p>En pareja</p>
+        </div>
+    </div>
+
+    <div class="card" data-id="4" style="grid-area: card4;">
+        <img src="assets/tennis.webp" alt="Pilates" />
+        <div class="info">
+            <span class="duration">45min</span>
+            <h3>Pilates</h3>
+            <p>Rutina individual</p>
+        </div>
+    </div>
+
+    <div class="card" data-id="5" style="grid-area: card5;">
+        <img src="assets/soccer.jpg" alt="Running" />
+        <div class="info">
+            <span class="duration">60min</span>
+            <h3>Sprints de running</h3>
+            <p>Individual o en grupo</p>
+        </div>
+    </div>
+
+</main>
+
+  <!-- Overlay + Popup -->
+  <div id="overlay" class="hidden">
+    <div id="expanded-card">
+      <div class="expanded-content">
+        <button id="close-expanded">X</button>
+        <img id="expanded-image" src="" alt="" />
+        <div class="info">
+          <span id="expanded-duration" class="duration"></span>
+          <h3 id="expanded-title"></h3>
+          <p id="expanded-desc"></p>
+          <button class="start-btn">Iniciar reto</button>
+          <button class="invite-btn">Invitar a un amigo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bg-audio" loop autoplay>
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
